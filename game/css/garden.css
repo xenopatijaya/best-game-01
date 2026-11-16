@@ -1,0 +1,50 @@
+/* VOID BLOOM — page frame. The game itself is drawn entirely on the canvas;
+   this sheet only centres the stage, paints the room around it, and keeps
+   the canvas at a steady 16:9 on any desktop window. */
+
+:root {
+  --room: #05070f;
+  --rim: #1d2a4a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background:
+    radial-gradient(1200px 700px at 50% 30%, #0b1026 0%, var(--room) 62%),
+    var(--room);
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+#stage {
+  width: min(100vw, 177.78vh);
+  padding: 10px;
+}
+
+canvas#garden {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  background: #0b1026;
+  border: 1px solid var(--rim);
+  border-radius: 10px;
+  box-shadow:
+    0 0 0 4px rgba(10, 14, 30, 0.9),
+    0 24px 80px rgba(0, 0, 0, 0.75),
+    0 0 90px rgba(110, 242, 216, 0.07);
+  cursor: crosshair;
+}
